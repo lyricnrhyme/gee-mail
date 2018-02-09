@@ -37,6 +37,20 @@
         	bodyDiv.className = "body";
         	bodyDiv.innerHTML = window.geemails[i].body;
         	messageDiv.appendChild(bodyDiv);
+
+        	messageDiv.addEventListener("click", show);
+
+        	
+
+        	function show() {
+
+        		var showMe = this.querySelector(".body");
+        		if (showMe.style.display === "none") {
+        			showMe.style.display = "block";
+        		} else {
+        			showMe.style.display = "none";
+        		}
+        	}
         }
       };
     </script>
