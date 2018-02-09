@@ -6,7 +6,38 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        
+        console.log(window.geemails[0]);
+        for (var i=0; i<window.geemails.length; i++) {
+        	console.log(window.geemails[i]);
+        	var messageDiv = document.createElement("div");
+        	messageDiv.className = "message";
+        	document.body.appendChild(messageDiv);
+
+        	var infoDiv = document.createElement("div");
+        	infoDiv.className = "info";
+        	messageDiv.appendChild(infoDiv);
+
+        	var senderDiv = document.createElement("div");
+        	senderDiv.className = "sender";
+        	senderDiv.innerHTML = window.geemails[i].sender;
+        	infoDiv.appendChild(senderDiv);
+
+        	var subjectDiv = document.createElement("div");
+        	subjectDiv.className = "subject";
+        	subjectDiv.innerHTML = window.geemails[i].subject;
+        	infoDiv.appendChild(subjectDiv);
+
+        	var dateDiv = document.createElement("div");
+        	dateDiv.className = "date";
+        	dateDiv.innerHTML = window.geemails[i].date;
+        	infoDiv.appendChild(dateDiv);
+
+
+        	var bodyDiv = document.createElement("div");
+        	bodyDiv.className = "body";
+        	bodyDiv.innerHTML = window.geemails[i].body;
+        	messageDiv.appendChild(bodyDiv);
+        }
       };
     </script>
 	</head>
