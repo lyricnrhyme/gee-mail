@@ -6,7 +6,21 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-        console.log(window.geemails[0]);
+
+        var inboxElem = document.createElement("div");
+        inboxElem.id = "inboxElem";
+        document.body.appendChild(inboxElem);
+
+        var inboxTitle = document.createElement("div");
+        inboxTitle.id = "inboxTitle";
+        inboxTitle.innerHTML = "Messages to read:";
+        inboxElem.appendChild(inboxTitle);
+
+        var inboxCount = document.createElement("div");
+        inboxCount.id = "inboxCount";
+        inboxCount.innerHTML = window.geemails.length;
+        inboxElem.appendChild(inboxCount);
+
         for (var i=0; i<window.geemails.length; i++) {
         	console.log(window.geemails[i]);
         	var messageDiv = document.createElement("div");
@@ -40,8 +54,6 @@
 
         	messageDiv.addEventListener("click", show);
 
-        	
-
         	function show() {
 
         		var showMe = this.querySelector(".body");
@@ -51,13 +63,17 @@
         			showMe.style.display = "none";
         		}
         	}
+        	function myFunction() {
+    console.log("test");
+}
+
         }
       };
     </script>
 	</head>
 	<body>
 		<div class="container" id="main">
-			Build Me!
+			<img src="images/geeMailEnvelope.png" class="icon">
 		</div>
 	</body>
 </html>
