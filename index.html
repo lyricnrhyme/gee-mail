@@ -6,15 +6,11 @@
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-		function myFunction() {
-    		myVar = setInterval(alertFunc, 3000);
+		function createMessage() {
+    		timer = setInterval(newMessage, 3000);
 		}
 
-		function alertFunc() {
-  		alert("Hello!");
-		}
-       
-       window.geemails.push(getNewMessage());
+		createMessage();
 
         var inboxElem = document.createElement("div");
         inboxElem.id = "inboxElem";
@@ -29,6 +25,12 @@
         inboxCount.id = "inboxCount";
         inboxCount.innerHTML = window.geemails.length;
         inboxElem.appendChild(inboxCount);
+
+        function newMessage() {
+  		window.geemails.push(getNewMessage());
+  		inboxCount.innerHTML = window.geemails.length;
+		}
+
 
         for (var i=0; i<window.geemails.length; i++) {
         	// console.log(window.geemails[i]);
