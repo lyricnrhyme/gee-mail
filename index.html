@@ -2,15 +2,18 @@
 	<head>
 		<script src="js/mail-generator.js"></script>
 		<link href="css/style.css" rel="stylesheet" media="screen">
+    <link href="https://fonts.googleapis.com/css?family=Work+Sans" rel="stylesheet">
     <script>
       window.onload = function(){
         // ALL OF YOUR JAVASCRIPT CODE SHOULD GO HERE. 
         // We have to use window.onload so your JavaScript doesn't execute until the page has loaded and all HTML has been downloaded to your browser
-		function createMessage() {
-    		timer = setInterval(newMessage, 3000);
-		}
+		// function createMessage() {
+  //   		timer = setInterval(newMessage, 3000);
+		// }
 
-		createMessage();
+
+
+		// createMessage();
 
         var inboxElem = document.createElement("div");
         inboxElem.id = "inboxElem";
@@ -26,17 +29,21 @@
         inboxCount.innerHTML = window.geemails.length;
         inboxElem.appendChild(inboxCount);
 
-        function newMessage() {
-  		window.geemails.push(getNewMessage());
-  		inboxCount.innerHTML = window.geemails.length;
-		}
+        var inboxMessages = document.createElement("div");
+        inboxMessages.id = "inboxMessages";
+        document.body.appendChild(inboxMessages);
+
+  //       function newMessage() {
+  // 		window.geemails.push(getNewMessage());
+  // 		inboxCount.innerHTML = window.geemails.length;
+		// }
 
 
         for (var i=0; i<window.geemails.length; i++) {
         	// console.log(window.geemails[i]);
         	var messageDiv = document.createElement("div");
         	messageDiv.className = "message";
-        	document.body.appendChild(messageDiv);
+        	inboxMessages.appendChild(messageDiv);
 
         	var infoDiv = document.createElement("div");
         	infoDiv.className = "info";
@@ -62,9 +69,12 @@
         	bodyDiv.className = "body";
         	bodyDiv.innerHTML = window.geemails[i].body;
         	messageDiv.appendChild(bodyDiv);
+          bodyDiv.style.display = "none";
 
         	messageDiv.addEventListener("click", show);
         }
+
+
         function show() {
 
         	var showMe = this.querySelector(".body");

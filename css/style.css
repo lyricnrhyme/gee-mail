@@ -1,21 +1,50 @@
+* {
+	font-family: "Work Sans", sans-serif;
+}
+
+body {
+	background-image: url("../images/background.jpg");
+	background-size: 1300px;
+}
+
+#inboxMessages {
+	background-color: rgba(255, 255, 255, 0.5);
+}
+
 .body {
 	display: none;
+	border-top: 1px solid lightgrey;
 }
 
 .message {
-	border: 1px solid black;
+	border-bottom: 1px solid grey;
+}
 
+.message:hover {
+	font-size: 110%;
+	background-color: rgba(22, 118, 180, 0.5);
+	color: white;
 }
 
 .info {
-	display: flex;
+	display: inline-flex;
 	width: 100%;
+	font-weight: bold;
+}
+
+.info:hover {
+	font-weight: normal;
 }
 
 .inboxElem {
 	display: flex;
+
 }
 
 .icon {
 	width: 5%;
+}
+
+.date {
+	margin-right: auto;
 }
