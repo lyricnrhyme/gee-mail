@@ -1,10 +1,40 @@
 * {
 	font-family: "Work Sans", sans-serif;
+	margin: 0px;
 }
 
 body {
 	background-image: url("../images/background.jpg");
 	background-size: 1300px;
+}
+
+#main {
+	background-color: rgba(22,118,162, 0.75);
+	box-shadow: 10px 1px 1px rgba(162, 162, 162, .5);
+	margin: 0px;
+	display: flex;
+}
+
+.icon {
+	width: 5%;
+	height: 10%;
+}
+
+#title {
+	font-size: 300%;
+	color: white;
+	padding-top: 3px;
+	padding-left: 3px;
+}
+
+#inboxElem {
+	background-color: rgba(255, 255, 255, 0.5);
+	margin-bottom: 4px;
+}
+
+#inboxTitle {
+	font-weight: bold;
+	font-size: 110%;
 }
 
 #inboxMessages {
@@ -14,6 +44,7 @@ body {
 .body {
 	display: none;
 	border-top: 1px solid lightgrey;
+	font-size: 85%;
 }
 
 .message {
@@ -36,13 +67,17 @@ body {
 	font-weight: normal;
 }
 
+.subject {
+	margin: auto;
+}
+
+.date {
+	margin-left: auto;
+}
+
 .inboxElem {
 	display: flex;
 
-}
-
-.icon {
-	width: 5%;
 }
 
 .date {
