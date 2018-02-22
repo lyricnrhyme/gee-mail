@@ -38,11 +38,15 @@
         inboxMessages.id = "inboxMessages";
         document.body.appendChild(inboxMessages);
 
-  //       function newMessage() {
-  // 		window.geemails.push(getNewMessage());
-  // 		inboxCount.innerHTML = window.geemails.length;
-		// }
+        function createNewMessage() {
+        window.geemails.push(getNewMessage());
+        inboxCount.innerHTML = window.geemails.length;
+        }
 
+        var timer;
+        function myFunction() {
+            timer = setInterval(messageFunc, 10000);
+        }
 
         for (var i=0; i<window.geemails.length; i++) {
         	// console.log(window.geemails[i]);
@@ -89,6 +93,42 @@
         			showMe.style.display = "none";
         		}
         }
+
+        function messageFunc() {
+            createNewMessage();
+            var newMessage = document.createElement("div");
+            newMessage.className = "message";
+            inboxMessages.appendChild(newMessage);
+  
+            var newInfo = document.createElement("div");
+            newInfo.className = "info";
+            newMessage.appendChild(newInfo);
+  
+            var newSender = document.createElement("div");
+            newSender.className = "sender";
+            newSender.innerHTML = window.geemails[window.geemails.length - 1].sender;
+            newInfo.appendChild(newSender);
+  
+            var newSubject = document.createElement("div");
+            newSubject.className = "subject";
+            newSubject.innerHTML = window.geemails[window.geemails.length - 1].subject;
+            newInfo.appendChild(newSubject);
+  
+            var newDate = document.createElement("div");
+            newDate.className = "date";
+            newDate.innerHTML = window.geemails[window.geemails.length - 1].date;
+            newInfo.appendChild(newDate);
+  
+            var newBody = document.createElement("div");
+            newBody.className = "body";
+            newBody.innerHTML = window.geemails[window.geemails.length - 1].body;
+            newMessage.appendChild(newBody);
+  
+            newBody.style.display = "none";
+            newMessage.addEventListener("click", show);
+        }
+
+myFunction();
 
 
       };
